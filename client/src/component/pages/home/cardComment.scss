@@ -1,0 +1,17 @@
+.cardComment {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .inputComment {
+        border: none;
+
+        &:focus {
+            border: none;
+        }
+
+        &::placeholder {
+            border: none;
+        }
+    }
+}

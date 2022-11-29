@@ -1,0 +1,31 @@
+.container__profile {
+    background-color: #0E1D34;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    // @include bottom();
+    bottom: 0;
+
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-position: center;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    p {
+        color: #a1b2bc;
+        font-size: 0.8rem;
+    }
+
+    p b {
+        font-style: italic;
+    }
+}
