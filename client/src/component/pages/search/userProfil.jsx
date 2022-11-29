@@ -1,40 +1,40 @@
-import { Button, TextareaAutosize } from '@mui/material';
-import { NavLink, useNavigate } from 'react-router-dom';
+// import { Button, TextareaAutosize } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editPost, getAllPost } from '../../../features/post.reducers';
+// import { editPost, getAllPost } from '../../../features/post.reducers';
 import '../../styles/userprofil.scss';
-import { dateParser, isempty } from '../../utils';
-import CardComment from '../home/cardComment';
-import DeleteCard from '../home/deleteCard';
-import LikeButon from '../home/likebuuton';
-import Postprofil from '../profil/postprofil';
-import LikeButonUser from './LikebuttonUser';
-import DeleteCardUser from './DeleteCardUser';
-import { setgetAll, setgetusers } from '../../../features/users.reducers';
-import { setgetUnique, setgetUsers } from '../../../features/user.reducers';
+// import { dateParser, isempty } from '../../utils';
+// import CardComment from '../home/cardComment';
+// import DeleteCard from '../home/deleteCard';
+// import LikeButon from '../home/likebuuton';
+// import Postprofil from '../profil/postprofil';
+// import LikeButonUser from './LikebuttonUser';
+// import DeleteCardUser from './DeleteCardUser';
+import {  setgetusers } from '../../../features/users.reducers';
+import {  setgetUsers } from '../../../features/user.reducers';
 import '../home/card.scss'
 import { getAllPostAlls } from '../../../features/allposts.reducers';
 import Navbar from '../../navigation/navbar';
 import './userprofil.scss'
 import Notfound from '../notfound';
-import { setgetUserChats } from '../../../features/chats.reducers';
+// import { setgetUserChats } from '../../../features/chats.reducers';
 
 const UserProfil = () => {
   const chats = useSelector(state => state.chats.chats); 
  const history = useNavigate();
-  const [showComment, setShowComment] = useState(false)
-  const [isUpdated, setUpdated] = useState(false);
-   const [textUpdated, settextUpdated] = useState(null);
+  // const [showComment, setShowComment] = useState(false)
+  // const [isUpdated, setUpdated] = useState(false);
+  //  const [textUpdated, settextUpdated] = useState(null);
       
         const user = useSelector((state)=>state.user.user)
-      const users = useSelector((state)=>state.users.users)
-      const allPosts = useSelector((state) => state.allposts.allposts);
+      // const users = useSelector((state)=>state.users.users)
+      // const allPosts = useSelector((state) => state.allposts.allposts);
       const dispatch = useDispatch();
   
     const [data, setData] = useState({});
-    const [dataPost, setDataPost] = useState([]);
+    // const [dataPost, setDataPost] = useState([]);
   
         const href = window.location.href;
   const id = href.slice(34);
@@ -61,6 +61,7 @@ const UserProfil = () => {
       // dispatch(setgetUserChats(data));
     })
     
+    
   }
    const sendRquest = async () => {
     const res = await axios.get(`${process.env.REACT_APP_URL_USER}/${id}`, {
@@ -70,31 +71,31 @@ const UserProfil = () => {
     const data = await res.data;
     return data;
   }
-       const editRquest = async () => {
-  await axios
-            .put(`${process.env.REACT_APP_URL_POST}/${id}`,
+//        const editRquest = async () => {
+//   await axios
+//             .put(`${process.env.REACT_APP_URL_POST}/${id}`,
                 
- {
+//  {
  
   
-  message : textUpdated
-              }
- ).catch(error => {
-   console.log(error)
-     ;
+//   message : textUpdated
+//               }
+//  ).catch(error => {
+//    console.log(error)
+//      ;
   
   
-            })
+//             })
  
-  }
-   const updateItem = async () => {
-    if (textUpdated) {
-      editRquest().then(() => {
-      dispatch(editPost())
-    })
-    }
-  setUpdated(false)
-  }
+//   }
+  //  const updateItem = async () => {
+  //   if (textUpdated) {
+  //     editRquest().then(() => {
+  //     dispatch(editPost())
+  //   })
+  //   }
+  // setUpdated(false)
+  // }
    const sendRquestUsers = async () => {
       const res = await axios
         .get(`${process.env.REACT_APP_URL_USER}`, {
@@ -161,7 +162,7 @@ const UserProfil = () => {
       })
     
    
-   
+   console.log(chats.members)
   
     
   return (

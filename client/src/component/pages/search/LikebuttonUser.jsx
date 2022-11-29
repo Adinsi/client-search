@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { dislikePost, getAllPost, likePost } from '../../../features/post.reducers';
+import { dislikePost, likePost } from '../../../features/post.reducers';
 
 const LikeButonUser = ({ el }) => {
     const dispatch = useDispatch();

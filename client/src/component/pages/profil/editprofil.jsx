@@ -74,13 +74,14 @@ const Editprofil = () => {
   
     return (
       <div id='editprofil' >
-        <div className="edit">
-                <Button  color='error' variant='contained' onClick={() => {
+           <Button  color='error' variant='contained' onClick={() => {
                         if (window.confirm('Voulez vous vraiment vous déconnectez ?')) {
                           // eslint-disable-next-line no-lone-blocks
                           {handleLogOut()}
                         }
                       }} >Deconnecter</Button> 
+        <div className="edit">
+             
             {
                 
                 <form style={{marginTop:'10px'}} className='center' action='' onSubmit={handlePicture}>
@@ -89,7 +90,7 @@ const Editprofil = () => {
 
                     <Button
                         // onClick={handleChangeForm}
-               color='error' variant='contained' >Changer d'image
+               variant='outlined' >Changer d'image
                       <input style={{padding:'0px',margin:'0px'}} type='file' name='image' accept='.jpg, .jpeg, .png' onChange={(e) => {
                     setFile(e.target.files[0])
                                

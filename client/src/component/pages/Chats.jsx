@@ -53,7 +53,7 @@ const Chats = () => {
   // })
   const onlineStatut = (chat) => {
   const chatMembers = chat.members?.find((member)=>member !== user._id);
-  const online = onlineUsers.find((user)=> user.userId === chatMembers)
+  const online =onlineUsers.find((user)=> user.userId === chatMembers)
   return online ? true : false
 }
     return (

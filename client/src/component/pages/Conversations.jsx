@@ -1,15 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { getUser } from '../../Api/chatrequest';
-import { setgetUserConversation } from '../../features/message.reducers';
-import { setgetUnique } from '../../features/user.reducers';
-import { setgetusers } from '../../features/users.reducers';
+// import { getUser } from '../../Api/chatrequest';
+// import { setgetUserConversation } from '../../features/message.reducers';
+// import { setgetUnique } from '../../features/user.reducers';
+// import { setgetusers } from '../../features/users.reducers';
 import './chats.scss'
 
 const Conversations = ({ chat, currentUser,online }) => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [usersData, setUsersData] = useState(null);
     // const usersData   = useSelector(state => state.messages.messages);
 

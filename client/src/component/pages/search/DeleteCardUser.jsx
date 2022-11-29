@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { deletePost } from '../../../features/post.reducers';
 
 const DeleteCardUser = ({el}) => {
     const dispatch = useDispatch();
-    const user = useSelector(state => state.user.user);
+    // const user = useSelector(state => state.user.user);
 //   const users = useSelector(state => state.users.users);
-    const allPosts = useSelector((state) => state.posts.posts);
+    // const allPosts = useSelector((state) => state.posts.posts);
     
     
              const deleteRquest = async () => {

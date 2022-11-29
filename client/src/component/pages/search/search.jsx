@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../../navigation/navbar';
@@ -5,7 +6,7 @@ import Notfound from '../notfound';
 // import '../styles/search.scss';
 import { setgetUsers } from '../../../features/user.reducers';
 import axios from 'axios';
-import { getAllPost } from '../../../features/post.reducers';
+// import { getAllPost } from '../../../features/post.reducers';
 import CardSearch from './cardSearch';
 import { setgetAll } from '../../../features/users.reducers';
 import CardActivite from './cardActivite';

@@ -6,13 +6,13 @@ import { setgetUserChats } from '../../features/chats.reducers';
 import Navbar from '../navigation/navbar';
 import { format } from 'timeago.js';
 import { io } from 'socket.io-client';
-import { isempty } from '../utils';
+// import { isempty } from '../utils';
 const Chatsbox = () => {
   const dispatch = useDispatch();
    const socket = useRef();
   const [onlineUsers, setOnlineUsers] = useState([]);
   const user = useSelector(state => state.user.user);
-     const users = useSelector(state => state.users.users);
+    //  const users = useSelector(state => state.users.users);
   const chats = useSelector(state => state.chats.chats);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -23,7 +23,7 @@ const Chatsbox = () => {
 
 // console.log(newMessage);
   const [data, setData] = useState({});
-    const receiverId = chats.members?.find((id) => id !== user._id);
+    // const receiverId = chats.members?.find((id) => id !== user._id);
   const href = window.location.href;
   const chatId = href.slice(31, 55)
   // console.log(data);
@@ -148,10 +148,10 @@ const Chatsbox = () => {
   return online ? true : false
   }
   useEffect(() => {
-  setOnline(onlineStatut(chats))
-  },[])
+  onlineStatut(chats)
+  })
     // console.log(chats);
-    return (
+    return  (
         <div>
             {
                 user && 
